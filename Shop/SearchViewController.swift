@@ -102,7 +102,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     private func runSearch() {
         let results = search(field.text ?? "")
-        countLabel.text = "\(results.count) results"
+        countLabel.text = "\(results.count) items"
         resultsList.arrangedSubviews.forEach { $0.removeFromSuperview() }
         results.map(ResultRowView.init).forEach(resultsList.addArrangedSubview)
         showResults(true)
