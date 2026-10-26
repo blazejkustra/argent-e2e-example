@@ -9,15 +9,21 @@
 /* Begin PBXBuildFile section */
 		5584CCF1013960BB436E64D5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0975120216039B0B0F5DB79B /* SearchViewController.swift */; };
 		936904C0A221F9EBF8AC4E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C04903F8ACF2E3D118B91 /* AppDelegate.swift */; };
+		ABB640C7F48F1CAC3449222F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4658767803FCAEBD79658986 /* Assets.xcassets */; };
 		B44E9E4627371E6998EB5573 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75CE3CDF572B53E8F6B3DC6 /* HomeViewController.swift */; };
 		BE4C69657807B77C43EF669F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F9519F245EE1CE09CA5C0 /* Product.swift */; };
+		CCB00C851981184291703D54 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5AE8D064C8776C3A1AB80 /* Theme.swift */; };
+		D95FAB441DFCD6096264B4E2 /* ProductViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C52E84EE886DE8956BAA0 /* ProductViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0975120216039B0B0F5DB79B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0F9C04903F8ACF2E3D118B91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25D5AE8D064C8776C3A1AB80 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		43FAD7B3FAD8C55202948F8A /* Shop.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4658767803FCAEBD79658986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E52ACFE09E442CD477E13B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		571C52E84EE886DE8956BAA0 /* ProductViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViews.swift; sourceTree = "<group>"; };
 		CD7F9519F245EE1CE09CA5C0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D75CE3CDF572B53E8F6B3DC6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,10 +49,13 @@
 			isa = PBXGroup;
 			children = (
 				0F9C04903F8ACF2E3D118B91 /* AppDelegate.swift */,
+				4658767803FCAEBD79658986 /* Assets.xcassets */,
 				D75CE3CDF572B53E8F6B3DC6 /* HomeViewController.swift */,
 				4E52ACFE09E442CD477E13B2 /* Info.plist */,
 				CD7F9519F245EE1CE09CA5C0 /* Product.swift */,
+				571C52E84EE886DE8956BAA0 /* ProductViews.swift */,
 				0975120216039B0B0F5DB79B /* SearchViewController.swift */,
+				25D5AE8D064C8776C3A1AB80 /* Theme.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -59,6 +68,7 @@
 			buildConfigurationList = 1449C471D5DE2774E62E6210 /* Build configuration list for PBXNativeTarget "Shop" */;
 			buildPhases = (
 				C8B63CC7608AF4EC5A403194 /* Sources */,
+				730F27DE421BEC5D74D72693 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -101,6 +111,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		730F27DE421BEC5D74D72693 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB640C7F48F1CAC3449222F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8B63CC7608AF4EC5A403194 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -109,7 +130,9 @@
 				936904C0A221F9EBF8AC4E7E /* AppDelegate.swift in Sources */,
 				B44E9E4627371E6998EB5573 /* HomeViewController.swift in Sources */,
 				BE4C69657807B77C43EF669F /* Product.swift in Sources */,
+				D95FAB441DFCD6096264B4E2 /* ProductViews.swift in Sources */,
 				5584CCF1013960BB436E64D5 /* SearchViewController.swift in Sources */,
+				CCB00C851981184291703D54 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

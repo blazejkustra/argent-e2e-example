@@ -1,10 +1,11 @@
 # Argent e2e example
 
-A small iOS shopping app with one [Argent](https://argent.swmansion.com/) e2e test that runs on every push and pull request in GitHub Actions.
+Stride, a small iOS running store app, with one [Argent](https://argent.swmansion.com/) e2e test that runs on every push and pull request in GitHub Actions.
 
 - `.argent/e2e/search.yaml` is the test: launch the app, open search, type "running shoes" and check the result count.
 - `.github/workflows/e2e.yml` builds the app, boots an iPhone simulator and runs the test.
 - `Shop/` is the UIKit app. Every element the test touches has an `accessibilityIdentifier`.
+- The home banner photo is [Running along the beach](https://commons.wikimedia.org/wiki/File:Running_along_the_beach_(Unsplash).jpg) by Alex Wong, CC0. Product tiles use SF Symbols.
 
 ## Run it locally
 
