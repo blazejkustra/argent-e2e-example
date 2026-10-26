@@ -22,8 +22,12 @@ jobs:
       # The first start on a fresh runner is slow, so start Argent before the tests
       - name: Start Argent
         run: |
-          argent server start --detach > /dev/null
-          argent server status
+          nohup argent server start > "$RUNNER_TEMP/argent-server.log" 2>&1 &
+          for attempt in $(seq 1 120); do
+            argent server status | grep -q "health:.*ok" && exit 0
+            sleep 1
+          done
+          exit 1
 
       - name: Build the app for the simulator
         run: |
