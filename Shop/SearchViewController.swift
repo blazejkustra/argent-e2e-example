@@ -78,6 +78,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             self?.field.text = text
             self?.runSearch()
         })
+        chip.setContentCompressionResistancePriority(.required, for: .horizontal)
         addSoftShadow(to: chip)
         return chip
     }
