@@ -19,6 +19,12 @@ jobs:
       - name: Install Argent
         run: npm install -g @swmansion/argent
 
+      # The first start on a fresh runner is slow, so start Argent before the tests
+      - name: Start Argent
+        run: |
+          argent server start --detach
+          argent server status
+
       - name: Build the app for the simulator
         run: |
           xcodebuild \
