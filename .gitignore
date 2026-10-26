@@ -1,0 +1,4 @@
+build/
+e2e-artifacts/
+.DS_Store
+xcuserdata/

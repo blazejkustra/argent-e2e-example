@@ -1,0 +1,13 @@
+steps:
+  - echo: Fresh launch, signed-out user
+  # Restart the app; app data is kept
+  - launch: com.example.shop
+  - await: { visible: { id: home-screen } }
+  # Wait until the screen stops changing
+  - await: { idle: true }
+  - tap: { id: search-tab }
+  # Types and presses Enter
+  - type: { into: { id: search-input }, text: running shoes }
+  - await: { visible: { id: search-results } }
+  # A regex, so any number of results passes
+  - assert: { text: { in: { id: result-count }, matches: '^\d+ results$' } }

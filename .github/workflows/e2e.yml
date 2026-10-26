@@ -1,0 +1,54 @@
+name: Argent e2e
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  ios-e2e:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Install Argent
+        run: npm install -g @swmansion/argent
+
+      - name: Build the app for the simulator
+        run: |
+          xcodebuild \
+            -project Shop.xcodeproj \
+            -scheme Shop \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO
+
+      # Boot the first available iPhone simulator and keep its id for later steps
+      - name: Boot a simulator and install the app
+        run: |
+          UDID=$(xcrun simctl list devices available --json \
+            | jq -r '[.devices[][] | select(.name | startswith("iPhone"))][0].udid')
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl install "$UDID" build/Build/Products/Release-iphonesimulator/Shop.app
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+
+      # Pin the device so the run never guesses which simulator to use
+      - name: Run the e2e tests
+        run: |
+          argent e2e run .argent/e2e --recursive \
+            --platform ios --device "$UDID" \
+            --output e2e-artifacts
+
+      - name: Upload failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-artifacts
+          path: e2e-artifacts
+          if-no-files-found: ignore
