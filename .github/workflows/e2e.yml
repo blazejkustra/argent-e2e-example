@@ -22,7 +22,7 @@ jobs:
       # The first start on a fresh runner is slow, so start Argent before the tests
       - name: Start Argent
         run: |
-          argent server start --detach
+          argent server start --detach > /dev/null
           argent server status
 
       - name: Build the app for the simulator
